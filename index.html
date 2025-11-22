@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tokatlama Oyunu</title>
+<style>
+body {
+  text-align: center;
+  background: #f5f5f5;
+  font-family: Arial;
+}
+#char {
+  width: 250px;
+  margin-top: 70px;
+  transition: transform 0.1s;
+}
+</style>
+</head>
+<body>
+
+<h2>Kurgusal Karakter Tokatlama</h2>
+<p>Tokatlamak için karaktere tıkla 👋</p>
+
+<img id="char" src="https://ibb.co/Rk7LbKX1">
+
+<audio id="slapSound" src="https://www.soundjay.com/human/sounds/slap-01.mp3"></audio>
+
+<script>
+const char = document.getElementById("char");
+const slap = document.getElementById("slapSound");
+
+char.addEventListener("click", () => {
+  char.style.transform = "rotate(15deg)";
+  slap.play();
+  setTimeout(() => char.style.transform = "rotate(0deg)", 100);
+});
+</script>
+
+</body>
+</html>
